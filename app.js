@@ -9,6 +9,8 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
+const myEmployees = [];
+let idHolder = 1;
 
 
 // Write code to use inquirer to gather information about the development team members,
@@ -36,3 +38,108 @@ const render = require("./lib/htmlRenderer");
 
 
 // Add a function that calls upon start, this function leads to the other options for a new employee
+function buildTeam() {
+    inquirer.prompt({
+        type: "list",
+        name: "choice",
+        message: "What do you wanna do?",
+        choices: ["Add New Manager", "Add New Engineer", "Add New Intern", "Quit"]
+    }).then(function ({ choice }) {
+        switch (choice) {
+            case "Add New Manager":
+                createManager();
+                break;
+
+            case "Add New Engineer":
+                createEngineer();
+                break;
+
+            case "Add New Intern":
+                createIntern();
+                break;
+
+            default:
+                console.log("Team Added to board")
+                // call rendering using myEmployees Array
+                break;
+        }
+    })
+}
+
+function createManager() {
+        inquirer.prompt([
+            {
+                type: "input",
+                message: "Enter Manager's name: ",
+                name: "name"
+            }, {
+                type: "input",
+                message: "Enter Manager's email: ",
+                name: "email"
+            }, {
+                type: "input",
+                message: "Enter Manager's office phone: ",
+                name: "officePhone"
+            }
+        ]).then(function (answers) {
+            // Set a placeholder variable
+            let selectedManager;
+            // Use placeholder to create new intern object
+            selectedIntern.addManager(answers.name, idHolder, answers.email, answers.officePhone);
+            // increment for new id number for next employee
+            idHolder++;
+            buildTeam();
+        })
+}
+
+function createIntern() {
+    inquirer.prompt([
+        {
+            type: "input",
+            message: "Enter Intern's name: ",
+            name: "name"
+        }, {
+            type: "input",
+            message: "Enter Intern's email: ",
+            name: "email"
+        }, {
+            type: "input",
+            message: "Enter Intern's school: ",
+            name: "school"
+        }
+    ]).then(function (answers) {
+        // Set a placeholder variable
+        let selectedIntern;
+        // Use placeholder to create new intern object
+        selectedIntern.addIntern(answers.name, idHolder, answers.email, answers.school);
+        // increment for new id number for next employee
+        idHolder++;
+        buildTeam();
+    })
+}
+
+function createIntern() {
+    inquirer.prompt([
+        {
+            type: "input",
+            message: "Enter Intern's name: ",
+            name: "name"
+        }, {
+            type: "input",
+            message: "Enter Intern's email: ",
+            name: "email"
+        }, {
+            type: "input",
+            message: "Enter Intern's school: ",
+            name: "school"
+        }
+    ]).then(function (answers) {
+        // Set a placeholder variable
+        let selectedIntern;
+        // Use placeholder to create new intern object
+        selectedIntern.addIntern(answers.name, idHolder, answers.email, answers.school);
+        // increment for new id number for next employee
+        idHolder++;
+        buildTeam();
+    })
+}
