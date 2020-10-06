@@ -2,7 +2,7 @@
 
 ### Author: David Guthmann
 
-github: https://github.com/Dguthmann/  
+github: https://https://github.com/Dguthmann/Employee-Team-Builder  
 livesite: N/A  
 
 
@@ -49,9 +49,9 @@ The goal of the project is to generate a new html file with team information dyn
 ![Site Screenshot](screenshot.png)
 
 
-## resources Used
+## Resources Used
 
-
+N/A
 
 
 ## Further Development Plans
