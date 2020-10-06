@@ -60,7 +60,9 @@ function buildTeam() {
 
             default:
                 console.log("Team Added to board")
+                console.table(myEmployees);
                 // call rendering using myEmployees Array
+                // render(myEmployees);
                 break;
         }
     })
@@ -85,33 +87,36 @@ function createManager() {
             // Set a placeholder variable
             let selectedManager;
             // Use placeholder to create new intern object
-            selectedIntern.addManager(answers.name, idHolder, answers.email, answers.officePhone);
+            // selectedManager.addManager(answers.name, idHolder, answers.email, answers.officePhone);
+            myEmployees.push(new Manager(answers.name, idHolder, answers.email, answers.officePhone));
             // increment for new id number for next employee
             idHolder++;
             buildTeam();
         })
 }
 
-function createIntern() {
+function createEngineer() {
     inquirer.prompt([
         {
             type: "input",
-            message: "Enter Intern's name: ",
+            message: "Enter Engineer's name: ",
             name: "name"
         }, {
             type: "input",
-            message: "Enter Intern's email: ",
+            message: "Enter Engineer's email: ",
             name: "email"
         }, {
             type: "input",
-            message: "Enter Intern's school: ",
-            name: "school"
+            message: "Enter Engineer's Github: ",
+            name: "github"
         }
     ]).then(function (answers) {
         // Set a placeholder variable
-        let selectedIntern;
+        let selectedEngineer;
         // Use placeholder to create new intern object
-        selectedIntern.addIntern(answers.name, idHolder, answers.email, answers.school);
+        // selectedEngineer.addEngineer(answers.name, idHolder, answers.email, answers.github);
+        myEmployees.push(new Engineer(answers.name, idHolder, answers.email, answers.github));
+        // building the new 
         // increment for new id number for next employee
         idHolder++;
         buildTeam();
@@ -137,9 +142,12 @@ function createIntern() {
         // Set a placeholder variable
         let selectedIntern;
         // Use placeholder to create new intern object
-        selectedIntern.addIntern(answers.name, idHolder, answers.email, answers.school);
+        // selectedIntern.addIntern(answers.name, idHolder, answers.email, answers.school);
+        myEmployees.push(new Intern(answers.name, idHolder, answers.email, answers.school));
         // increment for new id number for next employee
         idHolder++;
         buildTeam();
     })
 }
+
+buildTeam();
