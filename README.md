@@ -2,7 +2,7 @@
 
 ### Author: David Guthmann
 
-github: https://https://github.com/Dguthmann/Employee-Team-Builder  
+github: https://github.com/Dguthmann/Employee-Team-Builder  
 livesite: N/A  
 
 
