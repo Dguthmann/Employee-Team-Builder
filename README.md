@@ -9,26 +9,26 @@ livesite: N/A
 ## List of Contents
 
 app.js  
-package.json
-package-lock.json
+package.json  
+package-lock.json  
 README.md  
-LICENSE   
+LICENSE
 ### lib
 Employee.js  
 Engineer.js  
 htmlRenderer.js  
 Intern.js  
-Manager.js  
+Manager.js
 ### templates  
 employee.html  
 engineer.html  
 main.html  
-manager.html  
+manager.html
 ### test  
 Employee.test.js  
 Engineer.test.js  
 Intern.test.js  
-Manager.test.js  
+Manager.test.js
 ### output  
 team.html  
 
@@ -61,5 +61,5 @@ Project is considered complete as the pace of the class is dictating my timefram
 
 ## Changelog
 
-2020-10-06: Final testing readme
+2020-10-06: Final testing readme  
 2020-10-05: Writing of most of the code and functionality
